@@ -7,14 +7,14 @@ public class Order {
 
     private List<Item> items;
 
-    private double grandTotal;
+    private double totalPrice;
 
     public double getTotalPrice() {
-        return grandTotal;
+        return totalPrice;
     }
 
     public void setTotalPrice(double totalPrice) {
-        this.grandTotal = totalPrice;
+        this.totalPrice = totalPrice;
     }
 
     public String getEmail() {
@@ -34,11 +34,29 @@ public class Order {
     }
 
     public static class Item {
-        private String name;
+        private String itemName;
         private int quantity;
         private double price;
-
+        private String imageLink;
+        private String category;
         private double itemTotal;
+        public String getCategory() {
+            return category;
+        }
+
+        public void setCategory(String category) {
+            this.category = category;
+        }
+
+        public String getImageLink() {
+            return imageLink;
+        }
+
+        public void setImageLink(String imageLink) {
+            this.imageLink = imageLink;
+        }
+
+
 
         public double getItemTotal() {
             return itemTotal;
@@ -48,12 +66,12 @@ public class Order {
             this.itemTotal = itemTotal;
         }
 
-        public String getName() {
-            return name;
+        public String getItemName() {
+            return itemName;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setItemName(String itemName) {
+            this.itemName = itemName;
         }
 
         public int getQuantity() {
@@ -78,7 +96,7 @@ public class Order {
         return "Order{" +
                 "email='" + email + '\'' +
                 ", items=" + items +
-                ", totalprice="+grandTotal+'}';
+                ", totalprice="+totalPrice+'}';
     }
 }
 
