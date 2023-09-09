@@ -14,6 +14,11 @@ https://getyourbakesfrontend-irzzq65cdq-uc.a.run.app/
 
 **Application UI:**
 
+Loading Page:
+
+![image](https://github.com/Kovarthanan-murugan/Angular-Java-SpingBoot-Cloud-GetYourBakes/assets/90558927/f575e25a-e1bc-43c7-9df8-297912264395)
+
+
 Home Page:
 
 ![image](https://github.com/Kovarthanan-murugan/Angular-Java-SpingBoot-Cloud-GetYourBakes/assets/90558927/3b37ccb9-21bf-4122-90b2-4727792aa806)
