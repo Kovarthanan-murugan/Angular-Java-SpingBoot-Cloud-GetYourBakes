@@ -4,7 +4,7 @@
   "Parameters": {
     "ECSClusterName": {
       "Type": "String",
-      "Description": "Specifies the ECS Cluster Name with which the resources would be associated",
+      "Description": "Specif ies the ECS Cluster Name with which the resources would be associated",
       "Default": "gbackend2"
     },
     "SecurityGroupIds": {
