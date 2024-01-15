@@ -1,43 +1,35 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './items/items.component';
 import { RouterModule } from '@angular/router';
-import {UserService} from './login-registration-service/loginregistration.service'
+import { UserService } from './login-registration-service/loginregistration.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent,RouterModule,],
+  imports: [HomeComponent, RouterModule],
   template: `
-  <main>
+    <main>
       <header class="brand-name">
-      <ul>
-      <li><a href="" (click)="signOut()">Signout</a></li>
-      <li><a routerLink="/cart">Cart</a></li>
-      <li><a routerLink="">Home</a></li>
-
-      
-    </ul>   
+        <ul>
+          <li><a href="" (click)="signOut()">Signout</a></li>
+          <li><a routerLink="/cart">Cart</a></li>
+          <li><a routerLink="">Home</a></li>
+        </ul>
       </header>
-    <section class="content">
-      <router-outlet></router-outlet>
-    </section>
-  </main>
-`,
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  `,
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'homes';
 
-  constructor(private userService:UserService){
-    
-  }
+  constructor(private userService: UserService) {}
 
-  signOut(){
-
-    this.userService.signOut()
-    localStorage.setItem("currentUser","");
-
+  signOut() {
+    this.userService.signOut();
+    localStorage.setItem('currentUser', '');
+    sessionStorage.setItem('orderStatus', 'false');
   }
 }
-
-// <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-// <button (click) = "signOut()">SignOut</button>

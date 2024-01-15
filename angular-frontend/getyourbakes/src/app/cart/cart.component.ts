@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartItems } from '../interfaces/cart-items';
 import { CartservicesService } from '../cart-services/cartservices.service';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <div class="card">
       <div class="row">
@@ -33,11 +34,7 @@ import { CartservicesService } from '../cart-services/cartservices.service';
                 <div class="row text-muted">{{ cartItem.category }}</div>
                 <div class="row">{{ cartItem.itemName }}</div>
               </div>
-              <div class="col">
-                <a >-</a
-                ><a  class="border">{{ cartItem.quantity }}</a
-                ><a >+</a>
-              </div>
+
               <div class="col">
                 {{ cartItem.itemTotal | currency : 'CAD' }}
               </div>
@@ -45,7 +42,7 @@ import { CartservicesService } from '../cart-services/cartservices.service';
           </div>
 
           <div class="back-to-shop">
-            <a href="#">&leftarrow;</a
+            <a [routerLink]="['']">&leftarrow;</a
             ><span class="text-muted">Back to shop</span>
           </div>
         </div>
@@ -78,15 +75,14 @@ import { CartservicesService } from '../cart-services/cartservices.service';
             </div>
           </div>
           <div *ngIf="orderStatus; else content">
-          <div class="loading">
-          <button   (click)="checkout()" class="btn">Cancel Order</button>
-          <h1 id="orderCancel" >Order Placed Successfully</h1>
+            <div class="loading">
+              <button (click)="checkout()" class="btn">Cancel Order</button>
+              <h1 id="orderCancel">Order Placed Successfully</h1>
+            </div>
           </div>
-
-        </div>
-        <ng-template #content>
-        <button  (click)="checkout()" class="btn">CHECKOUT</button>
-        </ng-template>
+          <ng-template #content>
+            <button (click)="checkout()" class="btn">CHECKOUT</button>
+          </ng-template>
         </div>
       </div>
     </div>
@@ -100,10 +96,11 @@ export class CartComponent {
   grandCartTotal: number = 0;
   getAllCartDataService: CartservicesService = inject(CartservicesService);
 
-  // constructor() {
-  //   this.bakesServiceDataList = this.bakesDataService.getAllBakesDataService();
-  // }
   constructor() {
+    if (sessionStorage.getItem('orderStatus') === 'true') {
+      console.log('true');
+      this.orderStatus = true;
+    }
     this.getAllCartDataService
       .getAllCartDataService()
       .then((getAllCartDataList: CartItems[]) => {
@@ -118,7 +115,8 @@ export class CartComponent {
       );
   }
 
-  checkout(){
+  checkout() {
+    sessionStorage.setItem('orderStatus', 'true');
     this.orderStatus = !this.orderStatus;
   }
 }

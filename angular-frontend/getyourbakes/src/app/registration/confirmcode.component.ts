@@ -9,24 +9,32 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule], // Include FormsModule
   template: `
-  <div class="container">
-  <h2>Enter the confirmation code</h2>
-  <form (ngSubmit)="confirmCode()">
-    <div class="form-group">
-      <label for="confirmcode">ConfirmCode:</label>
-      <input type="text" id="username" [(ngModel)]="confirmcode" name="confirmcode" class="form-control" required>
+    <div class="container">
+      <h2>Enter the confirmation code</h2>
+      <form (ngSubmit)="confirmCode()">
+        <div class="form-group">
+          <p *ngIf="confirmCodeError" id="confirm-code-error">Wrong Code</p>
+          <label for="confirmcodeinput" id="confirm-code">ConfirmCode:</label>
+          <input
+            type="text"
+            id="username"
+            [(ngModel)]="confirmcode"
+            name="confirmcodeinput"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">ConfirmCode</button>
+      </form>
     </div>
-    <button type="submit" class="btn btn-primary">ConfirmCode</button>
-  </form>
-</div>
   `,
   styleUrls: ['./registration.component.css'],
 })
 export class ConfirmCode {
   confirmcode: string = ''; // Initialize username property
+  confirmCodeError: Boolean = false;
 
-
-  constructor(private userService: UserService,private router:Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   confirmCode() {
     const userData = {
@@ -37,9 +45,10 @@ export class ConfirmCode {
     this.userService.confirmCode(userData).subscribe(
       (response) => {
         console.log('Code Confirmed', response);
-        this.router.navigate(['']);
+        this.router.navigate(['/login']);
       },
       (error) => {
+        this.confirmCodeError = true;
         console.error('Error Code Confirmed:', error);
       }
     );

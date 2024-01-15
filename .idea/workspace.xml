@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a9dd7f32-be30-4d97-b44a-e4703d990adc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/bakesdata.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/bakesdata.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/cart-services/cartservices.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/cart-services/cartservices.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/cart/cart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/cart/cart.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/details/details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/details/details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/housing-location/housing-location.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/housing-location/housing-location.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/login-registration-service/loginregistration.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/login-registration-service/loginregistration.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/registration/confirmcode.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/registration/confirmcode.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/registration/registration.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/registration/registration.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/registration/registration.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-frontend/getyourbakes/src/app/routes.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2aucnr4hSaxMt7BPwdEvtmJEr0E" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "E:/Dalhousie/Class_Fall_2023/Projects/Angular-Java-SpingBoot-Cloud-GetYourBakes/springboot-backend/server"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a9dd7f32-be30-4d97-b44a-e4703d990adc" name="Changes" comment="" />
+      <created>1705172074237</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705172074237</updated>
+    </task>
+    <servers />
+  </component>
+</project>

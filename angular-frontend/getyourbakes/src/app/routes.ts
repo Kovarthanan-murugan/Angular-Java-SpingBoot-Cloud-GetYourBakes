@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './items/items.component';
 import { DetailsComponent } from './details/details.component';
 import {LoginComponent} from './login/login.component';
 import {RegistrationComponent} from './registration/registration.component';
@@ -33,7 +33,8 @@ const routeConfig: Routes = [
     {
       path:'confirmcode',
       component:ConfirmCode,
-      title:'confirmcode'
+      title:'confirmcode',
+      canActivate: [AuthGuard]
     },
     {
       path:'cart',

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
+import { HousingLocationComponent } from '../itemsrender/items-render';
 import { BakesData } from '../bakes';
 import { BakesDataService } from '../bakesdata.services';
 
@@ -47,7 +47,7 @@ import { BakesDataService } from '../bakesdata.services';
 
           <div class="aside aside-2 landing-section-right">
             <div id="right-content">
-              <h1>SPECIALTY DESSERTS FOR ANY OCCASION</h1>
+              <h1>SPECIALTYY DESSERTS FOR ANY OCCASION</h1>
               We offer delectable desserts for any celebration, special
               occasion, or corporate event. Options include layer cakes,
               cheesecakes, cupcakes, and more! Please allow a minimum of 48
@@ -55,56 +55,45 @@ import { BakesDataService } from '../bakesdata.services';
             </div>
           </div>
           <div class="restbody">
-          <div class="scroll-container">
-            <div class="scroll-content">
-              BRINGING YOU THE MOST DELECTABLE DESSERTS SINCE 2017
+            <div class="scroll-container">
+              <div class="scroll-content">
+                BRINGING YOU THE MOST DELECTABLE DESSERTS SINCE 2017
+              </div>
             </div>
+            <div id="products-heading">
+              <h1>SHOP WITH US</h1>
+              <p>
+                Planning for your upcoming party, celebration, office function
+                or family event? Make it a delectable experience! We have
+                delicacies for every occasion, ranging from traditional classics
+                like cheesecake, to trendy treats like our build your own
+                buttercream cakes.
+              </p>
+            </div>
+            <section class="results">
+              <app-housing-location
+                *ngFor="let bakesData of bakesServiceDataList"
+                [bakesData]="bakesData"
+              >
+              </app-housing-location>
+            </section>
           </div>
-          <div id="products-heading">
-            <h1>SHOP WITH US</h1>
-            <p>
-              Planning for your upcoming party, celebration, office function or
-              family event? Make it a delectable experience! We have delicacies
-              for every occasion, ranging from traditional classics like
-              cheesecake, to trendy treats like our build your own buttercream
-              cakes.
-            </p>
-          </div>
-          <section class="results">
-            <app-housing-location
-              *ngFor="let bakesData of bakesServiceDataList"
-              [bakesData]="bakesData"
-            >
-            </app-housing-location>
-          </section>
-        </div>
         </div>
       </ng-template>
     </div>
   `,
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./items.component.css'],
 })
 export class HomeComponent {
   loading = true;
   bakesServiceDataList: BakesData[] = [];
   bakesDataService: BakesDataService = inject(BakesDataService);
-
-  // constructor() {
-  //   this.bakesServiceDataList = this.bakesDataService.getAllBakesDataService();
-  // }
   constructor() {
     this.bakesDataService
       .getAllBakesDataService()
       .then((bakesServiceDataList: BakesData[]) => {
         this.bakesServiceDataList = bakesServiceDataList;
-        setTimeout(() => {
-          this.loading = false;
-        }, 2000);
+        this.loading = false;
       });
   }
 }
-
-// <form>
-// <input type="text" placeholder="Filter by city">
-// <button class="primary" type="button">Search</button>
-// </form>

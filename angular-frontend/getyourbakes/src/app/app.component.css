@@ -29,3 +29,11 @@ a{
 .content{
   background-color: #ffffff;
 }
+
+@media(max-width: 500px){
+
+  .brand-name ul{
+    margin-right: 20% !important;
+  }
+
+}
