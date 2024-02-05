@@ -27,7 +27,8 @@
     "LatestECSOptimizedAMI": {
       "Description": "AMI ID",
       "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
-      "Default": "/aws/service/ecs/optimized-ami/amazon-linux-2/recommended/image_id"
+      # "Default": "/aws/service/ecs/optimized-ami/amazon-linux-2/recommended/image_id"
+       "Default": "/aws/service/ecs/optimized-ami/amazon-linux-2023/recommended/image_id"
     },
     "IamRoleInstanceProfile": {
       "Type": "String",
@@ -47,6 +48,7 @@
   }
   },
   "Resources": {
+        
     "ECSLaunchTemplate": {
       "Type": "AWS::EC2::LaunchTemplate",
       "DependsOn": "ECSCluster",
@@ -55,6 +57,13 @@
           "ImageId": {
             "Ref": "LatestECSOptimizedAMI"
           },
+           "KeyName": "getyourbakes",
+           
+          "MetadataOptions": {
+            "HttpEndpoint" : "enabled",
+            "HttpTokens" : "optional",
+          },
+
           "SecurityGroupIds": {
             "Ref": "SecurityGroupIds"
           },
@@ -64,10 +73,11 @@
               "Ref": "IamRoleInstanceProfile"
             }
           },
+
           "UserData": {
             "Fn::Base64": {
               "Fn::Sub": [
-                "#!/bin/bash \necho ECS_CLUSTER=${ClusterName} >> /etc/ecs/ecs.config;",
+                "#!/bin/bash \necho ECS_CLUSTER=${ClusterName} >> /etc/ecs/ecs.config;\n  \n AWS_REGION=\"us-east-1\" \n PARAMETER_NAME=\"getyourbakesstatic\" \n  NEW_PARAMETER_VALUE=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) \n if [ -n $NEW_PARAMETER_VALUE ]; then \n  aws ssm put-parameter --name $PARAMETER_NAME --value $NEW_PARAMETER_VALUE --type String --overwrite --region $AWS_REGION  \n echo \"Parameter $PARAMETER_NAME updated with new value: $NEW_PARAMETER_VALUE\" \n else \necho \"Error: Unable to retrieve a valid value for NEW_PARAMETER_VALUE.\"\n fi",
                 {
                   "ClusterName": {
                     "Ref": "ECSClusterName"
@@ -84,7 +94,7 @@
       "DependsOn": "ECSCluster",
       "Properties": {
         "MinSize": "1",
-        "MaxSize": "2",
+        "MaxSize": "1",
         "DesiredCapacity": "1",
         "LaunchTemplate": {
           "LaunchTemplateId": {
