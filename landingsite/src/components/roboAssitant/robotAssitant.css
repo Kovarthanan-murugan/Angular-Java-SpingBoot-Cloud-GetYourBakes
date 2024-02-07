@@ -1,0 +1,179 @@
+
+@keyframes landingPageSlideAndShake {
+    0% {
+      transform: translateX(100%);
+    }
+    50% {
+      transform: translateX(0) rotate(0deg);
+    }
+    60% {
+      transform: translateX(-10px) rotate(5deg);
+    }
+    70% {
+      transform: translateX(10px) rotate(-5deg);
+    }
+    80% {
+      transform: translateX(-10px) rotate(5deg);
+    }
+    90% {
+      transform: translateX(10px) rotate(-5deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+    }
+  }
+  
+  .landingPage .myAssistant {
+    top: 20%; 
+    left: 50%;
+    animation: landingPageSlideAndShake 2s ease-in-out;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+
+  }
+
+  @keyframes landingPageExpandAndPop {
+    0% {
+      transform: scale(0); /* Start from a small size */
+      opacity: 0; /* Initially transparent */
+    }
+    80% {
+      transform: scale(1.2); /* Expand to 120% of the original size */
+    }
+    100% {
+      transform: scale(1); /* Pop back to the original size */
+      opacity: 1; /* Fully opaque */
+    }
+  }
+
+  .landingPage .myAssistantbubble {
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    opacity: 0;
+    /* transform: translate(-50%, -50%); */
+    animation: landingPageExpandAndPop 1s ease-out 1.2s forwards ; /* Animation for expansion and pop effect */
+   
+    width:360px;
+    height:291px;
+    z-index: 0; /* Ensure the bubble is above the assistant image */
+  }
+  
+
+  /* .message{
+    position: absolute;
+    top:50%;
+    left:10%
+  } */
+
+  .typingMessage {
+    width: 300px;
+    /* position: absolute; */
+    top: 27%;
+    left:35%;
+    z-index: 2;
+    color: black;
+    overflow: hidden;
+    white-space: normal;
+    margin: 0;
+    padding: 10px;
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    opacity: 0; /* Initial opacity set to 1 */
+    animation: typing-start 0.01s 2s forwards;
+  }
+  
+  /* Define the initial typing animation */
+  @keyframes typing-start {
+    0% {
+      opacity: 0; /* Start with opacity 1 */
+    }
+    100% {
+      opacity: 1; /* Transition to opacity 0 before the main typing animation */
+    }
+  }
+  
+  /* Define the typing animation */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 20%;
+    }
+  }
+  
+  /* Define the cursor blinking animation */
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #000;
+    }
+  }
+
+  .typingMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .landingPage .container{
+    position: absolute;
+    top:22%;
+    left:36%;
+    width:300px;
+    height:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes bakesSlideAndShakeBakes {
+    0% {
+      transform: translateX(50%) scale(1);
+    }
+  
+    100% {
+      transform: translateX(200%) translateY(-20%) scale(.5)  ;
+    }
+  }
+  
+  .bakes .myAssistant {
+    /* top: 20%; 
+    left: 50%; */
+    animation: bakesSlideAndShakeBakes 2s ease-in-out forwards; /* Keep the final animation state */
+    width: 500px;
+    height: 500px;
+    position: absolute;
+  }
+  
+  
+  @keyframes bakesExpandAndPopBakes {
+    0% {
+      transform: scale(0); /* Start from a small size */
+      opacity: 0; /* Initially transparent */
+    }
+    80% {
+      transform: scale(1.2); /* Expand to 120% of the original size */
+    }
+    100% {
+      transform: scale(1); /* Pop back to the original size */
+      opacity: 1; /* Fully opaque */
+    }
+  }
+
+  .bakes .myAssistantbubble{
+  width:300px;
+  height:200px;
+  position: fixed;
+  top: -5%;
+  left:62%;
+  opacity: 0;
+  /* transform: translate(-50%, -50%); */
+  animation: bakesExpandAndPopBakes 1s ease-out 1.2s forwards ; /* Animation for expansion and pop effect */
+   z-index: 0; /* Ensure the bubble is above the assistant image */
+}
