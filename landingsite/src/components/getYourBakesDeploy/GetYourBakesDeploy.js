@@ -21,46 +21,53 @@ export default function GetYourBakes(){
         <>
         <Background/>
         <RobotAssistant classForComponent={"bakes"}/>
-        <div></div>
-    <div className='wrapper'>
-    <h1 className='welcomeheader'>Hi Welcome</h1>
-    <br/>
-    <h1 className='info'>This is the landing page for my Getyourbakes project resource autoprovisioning in AWS</h1>
-    <h1 className='uisoon'>Working on AWS cloud formation to facilitate resource provisioning, that will be updated soon..!</h1>
-    <h1 className='deployed'>Use the below link to for the pre-deployed application</h1>
-     
-    {status != '' && (status == 'DeployComplete')? 
-    <><a href={`http://${publicIp}:4000`}> Deployed application</a> <button onClick={deleteResources}>Delete Resource</button></>
-    :
-    (currentOperation == 'deploy'? 'Provisiing is in process'
-    :
-    <button onClick={deployResource}>Deploy</button>)}
-    <table>
-      <thead>   
-      <tr>    
-      <th>Resource</th>
-      <th>Stack</th>
-      </tr> 
-      </thead>
-     <tbody>
-          {
+    {/* <div className='wrapper'>
+        <div className = "info-container">
+            <h1 className='welcomeheader'>Hi Welcome</h1>
+            <br/>
+            <h1 className='info'>This is the landing page for my Getyourbakes project resource autoprovisioning in AWS</h1>
+            <h1 className='uisoon'>Working on AWS cloud formation to facilitate resource provisioning, that will be updated soon..!</h1>
+            <h1 className='deployed'>Use the below link to for the pre-deployed application</h1>
+        </div>
+        <div className="deloy-container">
+            <div className ="deploy-actions">
 
-allProvisionResources?.length > 1 ? (
-            allProvisionResources.map((value, index) => (
-              <tr key={index}>
-                <td>{value.logicalID}</td>
-                <td>{value.status}</td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="2">No resources available</td>
-            </tr>
-          )}
-        </tbody>
-    </table>
-    {/* <a className='projectlink' style={{color:"white",fontSize:"20px"}} href="https://getyourbakesfrontend-irzzq65cdq-uc.a.run.app/">https://getyourbakesfrontend-irzzq65cdq-uc.a.run.app/</a> */}
-    </div>
+            
+            {status != '' && (status == 'DeployComplete')? 
+            <><a href={`http://${publicIp}:4000`}> Deployed application</a> <button onClick={deleteResources}>Delete Resource</button></>
+            :
+            (currentOperation == 'deploy'? 'Provisiing is in process'
+            :
+            <button onClick={deployResource}>Deploy</button>)}
+            </div>
+            <div className="output-terminal">
+                <table>
+                <thead>   
+                <tr>    
+                <th>Resource</th>
+                <th>Stack</th>
+                </tr> 
+                </thead>
+                <tbody>
+                    {
+
+                allProvisionResources?.length > 1 ? (
+                            allProvisionResources.map((value, index) => (
+                            <tr key={index}>
+                                <td>{value.logicalID}</td>
+                                <td>{value.status}</td>
+                            </tr>
+                            ))
+                        ) : (
+                            <tr>
+                            <td colSpan="2">No resources available</td>
+                            </tr>
+                        )}
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div> */}
     </>
     )
     

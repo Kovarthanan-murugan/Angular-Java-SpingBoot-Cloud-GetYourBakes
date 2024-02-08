@@ -52,14 +52,18 @@ import {useState,useEffect} from 'react';
    }
     return (
     <div className = {props.classForComponent}>
-      <div className='container'>
-      <div className='typingMessage' >{message}</div>
+      <div className = "full-robo-component">
+        <div className="message-box">
+          <div className='container'>
+            <div className='typingMessage' >{message}
+            </div>
+          </div>
+          <img className = "myAssistantbubble" src={bubble} alt='myAssistantBubble' ></img>
+        
+        </div>
+        <img className = "myAssistant" src={robot} alt='myAssistant' style ={{width:'500px',height:'500px'}}></img>
       </div>
       <button onClick={nextSequence}>Next</button>
-
-      <img className = "myAssistantbubble" src={bubble} alt='myAssistantBubble' ></img>
-      
-      <img className = "myAssistant" src={robot} alt='myAssistant' style ={{width:'500px',height:'500px'}}></img>
     </div>
     )
 }

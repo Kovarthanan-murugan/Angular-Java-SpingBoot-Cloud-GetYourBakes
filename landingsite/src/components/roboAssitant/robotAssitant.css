@@ -48,30 +48,36 @@
   }
 
   .landingPage .myAssistantbubble {
-    position: fixed;
-    top: 10%;
-    left: 30%;
+    /* position: fixed; */
+    width:300px;
+    height:200px;
+    position: static;
+    /* top: -5%;
+    left:62%; */
     opacity: 0;
     /* transform: translate(-50%, -50%); */
     animation: landingPageExpandAndPop 1s ease-out 1.2s forwards ; /* Animation for expansion and pop effect */
-   
-    width:360px;
-    height:291px;
+
     z-index: 0; /* Ensure the bubble is above the assistant image */
   }
-  
-
-  /* .message{
+  .landingPage .message-box{
     position: absolute;
-    top:50%;
-    left:10%
-  } */
+    top:1%;
+    right:11%
+  }
 
-  .typingMessage {
-    width: 300px;
-    /* position: absolute; */
-    top: 27%;
-    left:35%;
+  .landingPage .container{
+    position: absolute;
+    top: 31%;
+    left: 13%;
+    z-index:1;
+  }
+
+  .landingPage .typingMessage {
+    width: 250px;
+    position: static;
+    /* top: 27%;
+    left:35%; */
     z-index: 2;
     color: black;
     overflow: hidden;
@@ -83,6 +89,10 @@
     font-family: 'Arial', sans-serif;
     opacity: 0; /* Initial opacity set to 1 */
     animation: typing-start 0.01s 2s forwards;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   /* Define the initial typing animation */
@@ -115,22 +125,8 @@
     }
   }
 
-  .typingMessage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .landingPage .container{
-    position: absolute;
-    top:22%;
-    left:36%;
-    width:300px;
-    height:10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  
 
   @keyframes bakesSlideAndShakeBakes {
     0% {
@@ -138,17 +134,17 @@
     }
   
     100% {
-      transform: translateX(200%) translateY(-20%) scale(.5)  ;
+      transform: translateX(300%) translateY(-20%) scale(.5)  ;
     }
   }
   
   .bakes .myAssistant {
     /* top: 20%; 
-    left: 50%; */
-    animation: bakesSlideAndShakeBakes 2s ease-in-out forwards; /* Keep the final animation state */
+    left: 50%;  */
+    animation: bakesSlideAndShakeBakes 2s ease-in-out forwards; 
     width: 500px;
     height: 500px;
-    position: absolute;
+    position: static;
   }
   
   
@@ -169,11 +165,45 @@
   .bakes .myAssistantbubble{
   width:300px;
   height:200px;
-  position: fixed;
-  top: -5%;
-  left:62%;
+  position: static;
+  /* top: -5%;
+  left:62%; */
   opacity: 0;
   /* transform: translate(-50%, -50%); */
-  animation: bakesExpandAndPopBakes 1s ease-out 1.2s forwards ; /* Animation for expansion and pop effect */
+  animation: bakesExpandAndPopBakes 1s ease-out 1.2s forwards;
    z-index: 0; /* Ensure the bubble is above the assistant image */
+}
+
+.bakes .message-box{
+  position: absolute;
+  top:1%;
+  right:11%
+}
+.bakes .container{
+position: absolute;
+top: 31%;
+left: 13%;
+z-index:1;
+}
+
+.bakes .typingMessage {
+  width: 250px;
+  position: static;
+  /* top: 27%;
+  left:35%; */
+  z-index: 2;
+  color: black;
+  overflow: hidden;
+  white-space: normal;
+  margin: 0;
+  padding: 10px;
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'Arial', sans-serif;
+  opacity: 0; /* Initial opacity set to 1 */
+  animation: typing-start 0.01s 2s forwards;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

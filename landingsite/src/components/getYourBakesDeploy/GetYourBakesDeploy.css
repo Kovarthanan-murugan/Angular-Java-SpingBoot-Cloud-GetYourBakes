@@ -1,3 +1,13 @@
 .wrapper{
     color:white;
 }
+
+.output-terminal{
+    background-color: black;
+    width: 30%;
+    height: 200px;
+}
+
+.deploy-actions{
+    
+}
