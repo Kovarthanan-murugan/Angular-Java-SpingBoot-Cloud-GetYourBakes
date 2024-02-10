@@ -19,8 +19,67 @@ export default function GetYourBakes(){
  
     return(
         <>
-        <Background/>
         <RobotAssistant classForComponent={"bakes"}/>
+        <Background/>
+
+        <div className='flex-container'>
+           <div className="cloudInfo">
+
+           </div>
+
+           <div className='resourceSection flex-container'>
+
+                <div className='stackInfo flex-item'>
+
+                <table>
+                <thead>   
+                <tr>    
+                <th>Resource</th>
+                <th>Stack</th>
+                </tr> 
+                </thead>
+                <tbody>
+                    {
+
+                allProvisionResources?.length > 1 ? (
+                            allProvisionResources.map((value, index) => (
+                            <tr key={index}>
+                                <td>{value.logicalID}</td>
+                                <td>{value.status}</td>
+                            </tr>
+                            ))
+                        ) : (
+                            <tr>
+                            <td colSpan="2">No resources available</td>
+                            </tr>
+                        )}
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div className='actions flex-item'>
+                {status != '' && (status == 'DeployComplete')? 
+            <><a href={`http://${publicIp}:4000`}> Deployed application</a> <button onClick={deleteResources}>Delete Resource</button></>
+            :
+            (currentOperation == 'deploy'? 'Provisiing is in process'
+            :
+            <button onClick={deployResource}>Deploy</button>)}
+
+                </div>
+
+                <div className='output flex-item'>
+
+
+                </div>
+
+                </div>
+                
+                
+
+
+        </div>
+        
     {/* <div className='wrapper'>
         <div className = "info-container">
             <h1 className='welcomeheader'>Hi Welcome</h1>

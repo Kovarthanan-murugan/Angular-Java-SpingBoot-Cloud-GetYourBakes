@@ -11,3 +11,70 @@
 .deploy-actions{
     
 }
+
+
+.cloudInfo{
+    width: 50%;
+    height: 200px;
+    background-color: red;
+    position: absolute;
+    left:25%;
+    top:15%;
+}
+
+.resourceSection{
+    width: 80%;
+    /* background-color: red; */
+    position: absolute;
+    left:10%;
+    top:40%;
+    height: 500px;
+}
+
+.stackInfo{
+    background-color: black;
+
+}
+
+.actions{
+    background-color: rgb(201, 199, 199);
+
+
+
+}
+
+.output{
+    background-color: rgb(115, 236, 185);
+
+
+}
+
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+  
+
+}
+
+.flex-item {
+  padding: 5px;
+  width: 390px;
+  height: auto;
+  margin: 10px 10px 10px 10px;
+  line-height: 50px;
+  color: white;
+  /* font-weight: bold;
+  font-size: 3em;
+  text-align: center; */
+}
