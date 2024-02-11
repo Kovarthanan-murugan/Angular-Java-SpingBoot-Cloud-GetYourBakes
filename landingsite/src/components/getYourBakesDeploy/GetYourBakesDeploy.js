@@ -3,14 +3,16 @@ import {useEffect} from 'react'
 import Background from '../background/background';
 import './GetYourBakesDeploy.css'
 import RobotAssistant from '../roboAssitant/roboAssistant'
-
+import ufo from '../../assets/architecture.jpg'
 function createListOfResourcesProvision (stack){
 
     return <p>Resource: {stack.logicalId} Status:{stack.status}</p>
 }
 
 export default function GetYourBakes(){    
-    
+    const a = ()=>{
+        console.log("clicked kova")
+    }
     const {publicIp,fetchIpData,deployResource,deleteResources,status,allProvisionResources,getStatus,currentOperation}= useDeployResources();
 
     useEffect(()=>{
@@ -21,63 +23,81 @@ export default function GetYourBakes(){
         <>
         <RobotAssistant classForComponent={"bakes"}/>
         <Background/>
-
         <div className='flex-container'>
            <div className="cloudInfo">
+            <h1>AWS Architecture</h1>
+            <img className='architectureImg' src={ufo}></img>
 
            </div>
 
            <div className='resourceSection flex-container'>
+            
 
                 <div className='stackInfo flex-item'>
 
-                <table>
-                <thead>   
-                <tr>    
-                <th>Resource</th>
-                <th>Stack</th>
-                </tr> 
-                </thead>
-                <tbody>
-                    {
+                  <h1>Provisioning Information</h1>
 
-                allProvisionResources?.length > 1 ? (
-                            allProvisionResources.map((value, index) => (
-                            <tr key={index}>
-                                <td>{value.logicalID}</td>
-                                <td>{value.status}</td>
-                            </tr>
-                            ))
-                        ) : (
-                            <tr>
-                            <td colSpan="2">No resources available</td>
-                            </tr>
-                        )}
-                        </tbody>
-                    </table>
+                    <table>
+                    <thead>   
+                    <tr>    
+                    <th>Resource</th>
+                    <th>Stack</th>
+                    </tr> 
+                    </thead>
+                    <tbody>
+                        {
 
+                    allProvisionResources?.length > 1 ? (
+                                allProvisionResources.map((value, index) => (
+                                <tr key={index}>
+                                    <td>{value.logicalID}</td>
+                                    <td>{value.status}</td>
+                                </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                <td colSpan="2">No resources available</td>
+                                </tr>
+                            )}
+                            </tbody>
+                        </table>
                 </div>
 
                 <div className='actions flex-item'>
-                {status != '' && (status == 'DeployComplete')? 
-            <><a href={`http://${publicIp}:4000`}> Deployed application</a> <button onClick={deleteResources}>Delete Resource</button></>
-            :
-            (currentOperation == 'deploy'? 'Provisiing is in process'
-            :
-            <button onClick={deployResource}>Deploy</button>)}
+                    {
+                    status != '' && (status == 'DeployComplete') && (currentOperation != 'delete')
+                    ? 
+                    <button className ='missile-button missile-button-red' onClick={deleteResources}>Delete</button>
+                    :(currentOperation == 'deploy'? 'Provisiing is in process'
+                    :((status == 'DeleteInProgress' || currentOperation == 'delete') && status != 'DeleteComplete' ? 'Deleting resources' :<button className = 'missile-button missile-button-green'onClick={deployResource}>Deploy</button>)
+                    )
+                    }
+
+                    {/* {
+                    status != '' && (status == 'DeployComplete')
+                    ? 
+                    <>
+                    <a href={`http://${publicIp}:4000`}> Deployed application</a> <button onClick={deleteResources}>Delete Resource</button>
+                    </>
+                    :(currentOperation == 'deploy'? 'Provisiing is in process'
+                    :<button onClick={deployResource}>Deploy</button>)
+                    } */}
 
                 </div>
 
-                <div className='output flex-item'>
+                <div onClick = {a} className='output flex-item'>
+                    {
+                    status != '' && ((status == 'DeployComplete') || (status == 'DeleteInProgress'))
+                    ? 
+                    <a href={`http://${publicIp}:4000`}> Deployed application</a>
+                    :'No Provisioned resource available'
+
+                    }
 
 
                 </div>
 
-                </div>
-                
-                
-
-
+            </div>
         </div>
         
     {/* <div className='wrapper'>

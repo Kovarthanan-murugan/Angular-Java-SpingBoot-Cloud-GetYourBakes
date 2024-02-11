@@ -12,41 +12,61 @@
     
 }
 
-
+.cloudInfo h1{
+    margin: 0;
+    /* align-items: center; */
+    /* position: relative; */
+    justify-content: center;
+    display: flex;
+    background-color: #63a3a2;
+    
+}
 .cloudInfo{
-    width: 50%;
-    height: 200px;
+    width: 35%;
+    height: 285px;
     background-color: red;
     position: absolute;
-    left:25%;
-    top:15%;
+    left: 33%;
+    top: 10%;
+
+    border-radius: 152px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
 }
 
 .resourceSection{
-    width: 80%;
+    width: 75%;
     /* background-color: red; */
     position: absolute;
-    left:10%;
-    top:40%;
-    height: 500px;
+    left: 14%;
+    top: 50%;
+    height: 356px;
 }
 
 .stackInfo{
-    background-color: black;
 
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow:column;
 }
 
 .actions{
     background-color: rgb(201, 199, 199);
 
-
+    justify-content: center;
+    align-items: center;
+    display: flex;
 
 }
 
 .output{
     background-color: rgb(115, 236, 185);
 
-
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .flex-container {
@@ -70,11 +90,78 @@
 .flex-item {
   padding: 5px;
   width: 390px;
-  height: auto;
+  height: inherit;
   margin: 10px 10px 10px 10px;
-  line-height: 50px;
-  color: white;
+  line-height: 34px;
+  color: rgb(0, 0, 0);
   /* font-weight: bold;
   font-size: 3em;
   text-align: center; */
 }
+
+
+.flex-item {
+
+    background-color: #c3cfcf;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.flex-item:hover {
+    transform: translateZ(20px);
+}
+.missile-button-green{
+    background-color: #6ddc8f;
+
+}
+
+.missile-button-red{
+    background-color: #ed4f4ff6;
+
+}
+.missile-button {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: -1px 1px 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .missile-button-green:hover {
+    background-color: #176136;
+  }
+
+  .missile-button-red:hover {
+    background-color: #8d1f06;
+  }
+  
+  
+  .missile-button:active {
+    transform: translateY(1px);
+  }
+
+  .architectureImg{
+
+    width: 100%; /* Make the image width 100% of its container */
+    height: 100%; /* Make the image height 100% of its container */
+    object-fit: cover; /* Optional: Maintain aspect ratio and cover the entire container */
+
+  }
+
+  .cloudInfo{
+
+
+
+    border: 1px solid #ccc; /* Optional: Add a border to the container for visualization */
+    overflow: hidden; 
+  }

@@ -10,8 +10,8 @@ const HomePage = ()=>{
     
     return (
         <BrowserRouter>
-        {/* <RobotAssistant classForComponent={"landingPage"}/> */}
-        <GetYourBakes/>
+        <RobotAssistant classForComponent={"landingPage"}/>
+        {/* <GetYourBakes/> */}
       </BrowserRouter>
     );
 }
