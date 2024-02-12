@@ -1,21 +1,22 @@
 #bg {
     object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
+    /* width: 100vw;
+    height: 100vh; */
+    /* position: fixed; */
+    /* top: 100%; */
     left: 0;
     z-index: -5;
   }
   
   .shadow-overlay {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     z-index: -4;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
+    display: none;
   }
   
   @media (max-width: 700px) {

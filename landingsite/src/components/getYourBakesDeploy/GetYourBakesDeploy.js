@@ -21,9 +21,11 @@ export default function GetYourBakes(){
  
     return(
         <>
+        <div className="bakesContainer">
         <RobotAssistant classForComponent={"bakes"}/>
-        <Background/>
-        <div className='flex-container'>
+        {/* <Background/> */}
+        <div className='flex-container bakesWrap'>
+
            <div className="cloudInfo">
             <h1>AWS Architecture</h1>
             <img className='architectureImg' src={ufo}></img>
@@ -98,6 +100,7 @@ export default function GetYourBakes(){
                 </div>
 
             </div>
+        </div>
         </div>
         
     {/* <div className='wrapper'>

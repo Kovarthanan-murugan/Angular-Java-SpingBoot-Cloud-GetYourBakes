@@ -18,3 +18,8 @@
 /* .wrapper{
   display: none;
 } */
+
+.closure{
+  display: flex;
+  flex-flow: column;
+}

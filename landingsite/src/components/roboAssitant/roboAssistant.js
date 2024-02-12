@@ -32,6 +32,7 @@ import Background from '../background/background';
     const inCurrentSequenceRef = useRef(inCurrentSequence);
     const [animate, setAnimate] = useState(false);
     const [clickedAnimate, setclickedAnimate] = useState(false);
+    const [scrollDown, setScrollDown] = useState(false);
     useEffect(()=>{
 
       console.log("inside useeffect")
@@ -87,7 +88,9 @@ import Background from '../background/background';
               if (textIndex > text.length) {
                 clearInterval(typingAnimation);
                 setAnimate(false);
-
+                if(data =='First He Wants me to show you one of the project he is working'){
+                  setScrollDown(true)
+                }
               }
             }, 100);
         
@@ -102,6 +105,7 @@ import Background from '../background/background';
     console.log("currentPageData",myStateRef.current)
      console.log("sequence",myStateRef.current[sequence])
     if(myStateRef.current[sequence] != undefined){
+
     startTypingAnimation(myStateRef.current[sequence])
     setInCurrentSequence(inCurrentSequence+1)
     inCurrentSequenceRef.current = sequence
@@ -119,6 +123,9 @@ import Background from '../background/background';
 
             function updateRobotMessage(currentElement){
 
+              if(props.classForComponent == 'bakes'){
+        
+
               if (currentElement.classList.contains('stackInfo')) {
                 startTypingAnimation(bakesProvisionPage[0])
                 
@@ -129,12 +136,16 @@ import Background from '../background/background';
             {
               startTypingAnimation(bakesProvisionPage[2])
             }
-            else if(currentElement.classList.contains('myAssistant'))
+            
+          }
+          else{
+            if(currentElement.classList.contains('myAssistant'))
             {
               console.log("myssiis");
               toggleAnimation()
               nextSequence()
             }
+          }
 
               console.log('currentElement',currentElement)
 
@@ -151,12 +162,19 @@ import Background from '../background/background';
 
         </div>
         <div className = "myAssistantWrapper">
-        <img className={`myAssistant ${animate ? 'landingPageAnimateOnClick' :setclickedAnimate?'landingPageAnimateOffClick':''}`}  src={robot} alt='myAssistant' ></img>
+        <img className={`myAssistant ${animate ? 'landingPageAnimateOnClick' :clickedAnimate?'landingPageAnimateOffClick':''}`}  src={robot} alt='myAssistant' ></img>
         </div>
 
       </div>
       </div>
       {/* <button onClick={nextSequence}>Next</button> */}
+<div className={scrollDown?'arrow-down':''}><p className={scrollDown?'':'arrow-down-display'}>ScrollDown</p></div>
+      <div class="arrow-container animated fadeInDown">
+  <div class="arrow-2">
+    <i class="fa fa-angle-down"></i>
+  </div>
+  <div class="arrow-1 animated hinge infinite zoomIn"></div>
+</div>
     </div>
 
     {/* <Background/> */}

@@ -12,32 +12,29 @@
     
 }
 
-.cloudInfo h1{
-    margin: 0;
-    /* align-items: center; */
-    /* position: relative; */
-    justify-content: center;
-    display: flex;
-    background-color: #63a3a2;
-    
+.cloudInfo h1 {
+  margin: 0;
+  /* align-items: center; */
+  /* position: relative; */
+  justify-content: center;
+  display: flex;
+  background-color: #cebeaa;
 }
-.cloudInfo{
-    width: 35%;
-    height: 285px;
-    background-color: red;
-    position: absolute;
-    left: 33%;
-    top: 10%;
-
-    border-radius: 152px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    transition: transform 0.3s ease;
+.cloudInfo {
+  width: 35%;
+  height: 285px;
+  background-color: red;
+  position: relative;
+  /* left: 33%; */
+  top: -70px;
+  border-radius: 38px;
+  box-shadow: 0 0 20px rgb(169 135 135 / 50%);
+  transition: transform 0.3s ease;
 }
-
 .resourceSection{
     width: 75%;
     /* background-color: red; */
-    position: absolute;
+    /* position: absolute; */
     left: 14%;
     top: 50%;
     height: 356px;
@@ -101,11 +98,11 @@
 
 
 .flex-item {
-
-    background-color: #c3cfcf;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    transition: transform 0.3s ease;
+  background-color: #f9ebda;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(169 135 135 / 50%);
+  transition: transform 0.3s ease;
+  font-family: 'Raleway', sans-serif;
 }
 
 .flex-item:hover {
@@ -164,4 +161,16 @@
 
     border: 1px solid #ccc; /* Optional: Add a border to the container for visualization */
     overflow: hidden; 
+  }
+
+  .bakesContainer {
+    height: 800px;
+    width: 1880px;
+    background-color: #fff7f7;
+    margin-top: 10px;
+}
+
+  .bakesWrap{
+    position: relative;
+    top: 100px;
   }
