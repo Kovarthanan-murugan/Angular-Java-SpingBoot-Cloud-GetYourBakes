@@ -2,15 +2,34 @@ import './bakesInfo.css'
 import img from '../../assets/ufo2.jpg'
 import bakes from '../../assets/bakes.png'
 import cake from '../../assets/cake.png'
-import {useEffect} from 'react'
+import {useEffect,useState,useRef} from 'react'
 import {useTypingService} from '../../services/typingService'
 export default function BakesInfo(){
     const {startTypingAnimation,message,subMessage} = useTypingService()
+    const [scrolledToPage, setScrolledToPage] = useState(false);
+    const  refScrolledToPagev = useRef(scrolledToPage)
 
+  
     useEffect(()=>{
 
-            startTypingAnimation("Full Stack Application Build with Angular, Java and Amazon Web Services")
-   
+        const handleScroll = () => {
+            const threshold = 700; // Adjust this value to the desired scroll position
+            // console.log('scrolledValue',refScrolledToPagev)
+            if (window.scrollY >= threshold) {
+            //   console.log("uyou scrolled")
+              if(refScrolledToPagev.current == false){
+                
+              startTypingAnimation("Full Stack Application Build with Angular, Java and Amazon Web Services")
+              refScrolledToPagev.current = true
+            }
+
+              
+            } else {
+            }
+          };
+
+            window.addEventListener('scroll', handleScroll);
+
     },[]);
 
 

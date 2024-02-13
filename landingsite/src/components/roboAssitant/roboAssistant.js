@@ -33,9 +33,11 @@ import Background from '../background/background';
     const [animate, setAnimate] = useState(false);
     const [clickedAnimate, setclickedAnimate] = useState(false);
     const [scrollDown, setScrollDown] = useState(false);
-    useEffect(()=>{
 
-      console.log("inside useeffect")
+
+    useEffect(()=>{
+          
+      console.log("inside useeffect",window.scrollY)
       let data = null
       
 
@@ -52,6 +54,7 @@ import Background from '../background/background';
         setCurrentPageData(data)
         myStateRef.current = listDataLandingPage
       }
+
 
       console.log("dsds",data);
         window.addEventListener('click', (event)=>{

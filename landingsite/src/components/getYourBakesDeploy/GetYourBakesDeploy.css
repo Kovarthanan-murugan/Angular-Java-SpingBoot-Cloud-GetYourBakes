@@ -98,7 +98,7 @@
 
 
 .flex-item {
-  background-color: #f9ebda;
+  background-image: linear-gradient(90deg, #ad9e9e 0%, #fffbf4 35%, #dbdbdb 100%);
   border-radius: 10px;
   box-shadow: 0 0 20px rgb(169 135 135 / 50%);
   transition: transform 0.3s ease;
