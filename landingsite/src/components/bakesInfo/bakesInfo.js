@@ -14,7 +14,7 @@ export default function BakesInfo(){
 
         const handleScroll = () => {
             const threshold = 700; // Adjust this value to the desired scroll position
-            // console.log('scrolledValue',refScrolledToPagev)
+            console.log('scrolledValue',refScrolledToPagev)
             if (window.scrollY >= threshold) {
             //   console.log("uyou scrolled")
               if(refScrolledToPagev.current == false){
@@ -28,7 +28,11 @@ export default function BakesInfo(){
             }
           };
 
-            window.addEventListener('scroll', handleScroll);
+     window.addEventListener('scroll', handleScroll);
+
+     return ()=>{
+        window.removeEventListener('scroll',handleScroll)
+     }
 
     },[]);
 

@@ -44,7 +44,7 @@
     60% {
       transform: rotate(-5deg) ;
     }
-    70% {
+    0% {
       transform: rotate(5deg) ;
     }
     80% {
@@ -353,7 +353,7 @@ width:15em; height:15em;
   }
 
   .landingPage {
-  width:1859px;
+  width:1913px;
   height: 865px;
   background-color: #fff7f7;
   /* border-radius: 205px; */
@@ -535,4 +535,50 @@ display: none;
 }
 .bakes p{
   display: none;
+}
+
+@keyframes pointerAnimation {
+  0% {
+    transform: translateX(200%) translateY(200%) scale(1);
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(100%) translateY(50%) scale(.5)  ;
+    opacity: 1;
+  }
+
+  80%{
+    transform: translateX(100%) translateY(50%) scale(.1);
+    opacity: 0;
+  }
+
+  90%{
+    transform: translateX(100%) translateY(50%) scale(.5);
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(200%) translateY(200%) scale(.5);
+     
+  }
+}
+.landingPage .pointerAnimate{
+    opacity: 0;
+    top: 20%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    position: absolute;
+    animation: pointerAnimation 1s ease-out  forwards;
+    
+}
+.landingPage .pointer{
+display:none
+  
+}
+
+.bakes .pointer{
+display: none;
 }

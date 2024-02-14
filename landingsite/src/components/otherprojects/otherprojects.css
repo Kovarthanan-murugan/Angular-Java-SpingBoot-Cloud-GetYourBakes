@@ -1,0 +1,35 @@
+.githubIcon {
+    width: 46px;
+    height: 39px;
+    position: relative;
+    left: 1792px;
+    top: 10px;
+}
+  
+.linkedinIcon {
+    width: 47px;
+    height: 40px;
+    position: relative;
+    left: 1689px;
+    top: 11px;
+}
+
+.footer {
+    position: relative;
+    width: 1913px;
+    top: 702px;
+    height: 56px;
+    background-color: beige;
+    background-image: linear-gradient(90deg, #fdf9f2 0%, #c5ad82 35%, #ffd2d2 100%);
+}
+.updatingSoon{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    font-family: 'Protest Revolution', sans-serif;
+    font-weight: 100;
+    position: relative;
+    top: 400px;
+}
+

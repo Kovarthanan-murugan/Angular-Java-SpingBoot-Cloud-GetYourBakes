@@ -7,6 +7,7 @@ import {useEffect} from 'react'
 import RobotAssistant from './components/roboAssitant/roboAssistant'
 import GetYourBakes from './components/getYourBakesDeploy/GetYourBakesDeploy'
 import LandingPage from './components/bakesInfo/bakesInfo';
+import Otherprojects from './components/otherprojects/otherprojects';
 const HomePage = ()=>{
     
     return (
@@ -15,6 +16,7 @@ const HomePage = ()=>{
         <RobotAssistant classForComponent={"landingPage"}/>
         <LandingPage/>
         <GetYourBakes/>
+        <Otherprojects/>
         </div>
 
       </BrowserRouter>

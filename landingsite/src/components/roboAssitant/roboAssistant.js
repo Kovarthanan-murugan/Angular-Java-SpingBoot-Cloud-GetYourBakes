@@ -2,7 +2,7 @@ import robot from '../../assets/robot.png'
 import bubble from '../../assets/speechbubble5.png'
 import './robotAssitant.css';
 import {useState,useEffect,useRef} from 'react';
-
+import clickImg from '../../assets/click.png'
 import GetYourBakes from '../getYourBakesDeploy/GetYourBakesDeploy'
 import Background from '../background/background';
 
@@ -33,8 +33,12 @@ import Background from '../background/background';
     const [animate, setAnimate] = useState(false);
     const [clickedAnimate, setclickedAnimate] = useState(false);
     const [scrollDown, setScrollDown] = useState(false);
-
-
+    const [scrolledToPage, setScrolledToPage] = useState(false);
+    const  refScrolledToPagev = useRef(scrolledToPage)
+    const [pointerStatus, setPointerStatus] = useState(false);
+    const [bakesRoboAnimate, setBakesRoboAnimate] = useState(false);
+    const  refBakesRoboAnimate = useRef(bakesRoboAnimate);
+    
     useEffect(()=>{
           
       console.log("inside useeffect",window.scrollY)
@@ -61,7 +65,33 @@ import Background from '../background/background';
           updateRobotMessage(event.target)});
         
         setTimeout(()=>{startTypingAnimation(data[0])},1500)
-        
+        const handleScroll = () => {
+          const threshold = 1400; // Adjust this value to the desired scroll position
+          console.log('inside assistant',refScrolledToPagev)
+
+          if(window.scrollY >=700){
+            setScrollDown(false);
+          }
+          if (window.scrollY >= threshold) {
+          //   console.log("uyou scrolled")
+            if(refScrolledToPagev.current == false){
+              refBakesRoboAnimate.current = true;
+              if(props.classForComponent == 'bakes'){
+            startTypingAnimation(bakesProvisionPage[0])
+            refScrolledToPagev.current = true
+              }
+          }
+
+            
+          } else {
+          }
+        };
+
+   window.addEventListener('scroll', handleScroll);
+
+   return ()=>{
+      window.removeEventListener('scroll',handleScroll)
+   }
 
         
     },[])
@@ -93,6 +123,9 @@ import Background from '../background/background';
                 setAnimate(false);
                 if(data =='First He Wants me to show you one of the project he is working'){
                   setScrollDown(true)
+                }
+                if(data =='Hello Excited to see you today!!'){
+                  setPointerStatus(true)
                 }
               }
             }, 100);
@@ -165,7 +198,8 @@ import Background from '../background/background';
 
         </div>
         <div className = "myAssistantWrapper">
-        <img className={`myAssistant ${animate ? 'landingPageAnimateOnClick' :clickedAnimate?'landingPageAnimateOffClick':''}`}  src={robot} alt='myAssistant' ></img>
+          <img className={pointerStatus ==true?'pointerAnimate':'pointer'} src ={clickImg}></img>
+        <img className={`myAssistant ${animate ? 'landingPageAnimateOnClick' :clickedAnimate?'landingPageAnimateOffClick':''} ${animate?'':''}`}  src={robot} alt='myAssistant' ></img>
         </div>
 
       </div>

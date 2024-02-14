@@ -164,8 +164,8 @@
   }
 
   .bakesContainer {
-    height: 800px;
-    width: 1880px;
+    height: 903px;
+    width: 1913px;
     background-color: #fff7f7;
     margin-top: 10px;
 }
@@ -174,3 +174,9 @@
     position: relative;
     top: 100px;
   }
+
+  .loadingGif {
+    width: 42px;
+    position: relative;
+    /* top: 496px; */
+}
