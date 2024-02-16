@@ -72,12 +72,12 @@ export default function GetYourBakes(){
                         status != '' && (status == 'DeployComplete') && (currentOperation != 'delete')
                         ? 
                         <button className ='missile-button missile-button-red' onClick={deleteResources}>Delete</button>
-                        :(currentOperation == 'deploy'? 'Provising is in process'
-                        :((status == 'DeleteInProgress' || currentOperation == 'delete') && status != 'DeleteComplete' ? 'Deleting resources' :<button className = 'missile-button missile-button-green'onClick={deployResource}>Deploy</button>)
+                        :(currentOperation == 'deploy' || status =='DeployInProgress'?'Provising is in process'
+                        :((status == 'DeleteInProgress' || currentOperation == 'delete') && status != 'DeleteComplete' || status =='DeleteInProgress' ? 'Deleting resources' :<button className = 'missile-button missile-button-green'onClick={deployResource}>Deploy</button>)
                         )
                         }
                         {
-                            ((status == 'DeleteInProgress' || currentOperation == 'delete') && status != 'DeleteComplete' ) ||(currentOperation == 'deploy' && status != 'DeployComplete') ? <img className='loadingGif'src={loadinggif}></img>:''
+                            ((status == 'DeleteInProgress' || currentOperation == 'delete') && status != 'DeleteComplete' ) ||(currentOperation == 'deploy' && (status != 'DeployComplete' || status =='DeployInProgress')) ? <img className='loadingGif'src={loadinggif}></img>:''
                         }
                         
                         {/* {

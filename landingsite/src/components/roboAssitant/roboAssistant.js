@@ -24,7 +24,7 @@ import Background from '../background/background';
     "His skill set includes Java, Amazon Web Services, Javascript realted technologies like React, Angular and Node.",
     "First He Wants me to show you one of the project he is working"];
    
-    const bakesProvisionPage =['Here you can find the current resource provisioning status','Here you can find  Deploy and Delete actions','Here you can find the link for the provisioned application after provision done']
+    const bakesProvisionPage =['Here you can find the current resource provisioning status','Here you can find  Deploy and Delete actions','Here you can find the link for the provisioned application after provision done','Now all the provisoned resource will be deleted from the AWS', 'New resources will be provisioned for getyourbakes application']
     const [message,setMessage] = useState('')
     const [inCurrentSequence,setInCurrentSequence] = useState(0)
     const [currentPageData,setCurrentPageData] = useState([])
@@ -171,6 +171,14 @@ import Background from '../background/background';
             else if (currentElement.classList.contains('output'))
             {
               startTypingAnimation(bakesProvisionPage[2])
+            }
+            else if (currentElement.classList.contains('missile-button-red'))
+            {
+              startTypingAnimation(bakesProvisionPage[3])
+            }
+            else if (currentElement.classList.contains('missile-button-green'))
+            {
+              startTypingAnimation(bakesProvisionPage[4])
             }
             
           }
