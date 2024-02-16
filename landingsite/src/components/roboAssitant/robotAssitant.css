@@ -92,6 +92,15 @@
 
   }
 
+  .landingPage .myAssistant {
+    top: 20%;
+    left: 50%;
+    animation: landingPageSlideAndShake 2s ease-in-out;
+    width: 45%;
+    height: 42vh;
+    position: absolute;
+}
+
   @keyframes landingPageExpandAndPop {
     0% {
       transform: scale(0); /* Start from a small size */
@@ -120,6 +129,18 @@
 
     z-index: 0; /* Ensure the bubble is above the assistant image */
   }
+  .landingPage .myAssistantbubble {
+    display: none;
+    /* position: fixed; */
+    width: 460px;
+    height: 300px;
+    position: static;
+    opacity: 0;
+    /* transform: translate(-50%, -50%); */
+    animation: landingPageExpandAndPop 1s ease-out 1.2s forwards;
+    z-index: 0;
+}
+
   .landingPage .message-box{
     position: absolute;
     top:20%;
@@ -144,6 +165,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.landingPage .container {
+  position: relative;
+  top: 52%;
+  left: -13%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
   /* .landingPage .typingMessage {
@@ -179,6 +209,25 @@
     font-size: 40px;
     animation: typing-start 0.01s 2s forwards;
     text-align: center;
+}
+
+.landingPage .typingMessage {
+  width: 50%;
+  position: absolute;
+  /* top: 37%; */
+  z-index: 2;
+  color: black;
+  /* overflow: hidden; */
+  /* white-space: normal; */
+  /* margin: 0; */
+  /* padding: 10px; */
+  /* display: inline-block; */
+  font-family: 'Protest Revolution', sans-serif;
+  /* font-family: 'Arial', sans-serif; */
+  opacity: 0;
+  font-size: 40px;
+  animation: typing-start 0.01s 2s forwards;
+  text-align: center;
 }
   /* Define the initial typing animation */
   @keyframes typing-start {
@@ -249,7 +298,16 @@
     /* position: absolute; */
 
 
+
   }
+
+  .bakes .myAssistant {
+    animation: bakesSlideAndShakeBakes 2s ease-in-out forwards;
+    width: 94%;
+    height: 31vh;
+    display: block;
+    /* position: absolute; */
+}
   
   
   @keyframes bakesExpandAndPopBakes {
@@ -279,12 +337,31 @@
    
 }
 
+.bakes .myAssistantbubble {
+  width: 96%;
+  height: 31vh;
+  position: relative;
+  opacity: 0;
+  /* transform: translate(-50%, -50%); */
+  animation: bakesExpandAndPopBakes 1s ease-out 1.2s forwards;
+  z-index: 0;
+}
 
 .bakes .container {
   position: absolute;
   top: -21px;
   right: 128px;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bakes .container {
+  position: relative;
+  top: -7vh;
+  right: 57%;
+  /* z-index: 1; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -312,6 +389,22 @@
   align-items: center; */
 }
 
+.bakes .typingMessage {
+  width: 77%;
+  left: 10%;
+  position: absolute;
+  z-index: 2;
+  color: black;
+  overflow: hidden;
+  white-space: normal;
+  margin: 0;
+  padding: 10px;
+  display: inline-block;
+  font-size: 100%;
+  font-family: 'Arial', sans-serif;
+  opacity: 0;
+  animation: typing-start 0.01s 2s forwards;
+}
 
 
 .bakes .myAssistantWrapper{
@@ -320,6 +413,15 @@
   right:200px;
   display: inline-block;
   width:fit-content;
+}
+
+.bakes .myAssistantWrapper {
+  position: absolute;
+  top: 4vh;
+  right: 69%;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: 100%;
 }
 
 div.clickEffect{
@@ -358,6 +460,13 @@ width:15em; height:15em;
   background-color: #fff7f7;
   /* border-radius: 205px; */
   }
+
+  .landingPage {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff7f7;
+    /* border-radius: 205px; */
+}
   /* .landingPage .full-robo-component {
     position: relative;
     width: 900px;
@@ -379,6 +488,17 @@ width:15em; height:15em;
   /* display: none; */
 }
 
+.landingPage .landingPageDecorate {
+  width: 54%;
+  height: 74vh;
+  background: #ffffff;
+  left: 25%;
+  position: absolute;
+  border-radius: 205px;
+  top: 90px;
+  /* display: none; */
+}
+
 .landingPage .full-robo-component {
   position: relative;
   width: 900px;
@@ -389,26 +509,58 @@ width:15em; height:15em;
   top: 11%;
 }
 
-
-.bakes {
+.landingPage .full-robo-component {
+  position: relative;
+  width: 91%;
+  height: 60vh;
+  background-color: #ffeeee;
+  border-radius: 205px;
+  left: 4%;
+  top: 11%;
+}
+/*rr*/
+/* .bakes {
   width: 601px;
   background-color: #3ca5a5;
   top: 80px;
   position: relative;
   left: 1277px;
+} */
+
+.bakes {
+  width: 20%;
+  /* background-color: #3ca5a5; */
+  top: 80px;
+  position: relative;
+  left: 80%;
+}
+
+.bakes {
+  width: 20%;
+  /* background-color: #3ca5a5; */
+  top: 8vh;
+  position: relative;
+  left: 80%;
 }
 
 .bakesContainer{
   width:fit-content;
 }
 
+.bakesContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff7f7;
+  margin-top: 10px;
+}
 
-.arrow-container{
+
+.landingPage .arrow-container{
   width: 100px;
   height: 100px;
   margin: 0 auto;
   position: absolute;
-  bottom: 25px;
+  bottom:-7vh;
   left: 0;
   right: 0;
 }
@@ -421,6 +573,14 @@ width:15em; height:15em;
   border-radius: 50%;
   position: absolute;
 }
+/* .arrow-1 {
+  width: 116%;
+  height: 12vh;
+  background: #00BCD4;
+  opacity: 0.5;
+  border-radius: 50%;
+  position: absolute;
+} */
 
 .arrow-2{
   width: 60px;
@@ -433,6 +593,17 @@ width:15em; height:15em;
   z-index: 1;
   display: table;
 }
+/* .arrow-2 {
+  width: 67%;
+  height: 7vh;
+  background: #00BCD4;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5vh;
+  left: 25%;
+  z-index: 1;
+  display: table;
+} */
 
 .arrow-2:before{
   width: 52px;
@@ -444,7 +615,16 @@ width:15em; height:15em;
   top: 2px;
   left: 2px;
 }
-
+/* .arrow-2:before {
+  width: 85%;
+  height: 6vh;
+  content: "";
+  border: 2px solid #006064;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.3vh;
+  left: 5%;
+} */
 .arrow-2 i.fa{
   font-size: 30px;
   display: table-cell;
@@ -537,7 +717,7 @@ display: none;
   display: none;
 }
 
-@keyframes pointerAnimation {
+/* @keyframes pointerAnimation {
   0% {
     transform: translateX(200%) translateY(200%) scale(1);
     opacity: 1;
@@ -562,6 +742,33 @@ display: none;
     transform: translateX(200%) translateY(200%) scale(.5);
      
   }
+} */
+
+@keyframes pointerAnimation {
+  0% {
+    transform: translateX(65%) translateY(10%) scale(1);
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(-96%) translateY(-41vh) scale(.5)  ;
+    opacity: 1;
+  }
+
+  80%{
+    transform: translateX(-96%) translateY(-41vh) scale(.1);
+    opacity: 0;
+  }
+
+  90%{
+    transform: translateX(-96%) translateY(-41vh) scale(.5);
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(65%) translateY(10%) scale(.5);
+     
+  }
 }
 .landingPage .pointerAnimate{
     opacity: 0;
@@ -574,6 +781,17 @@ display: none;
     animation: pointerAnimation 1s ease-out  forwards;
     
 }
+
+.landingPage .pointerAnimate {
+  opacity: 1;
+  top: 62vh;
+  left: 88%;
+  width: 20%;
+  height: 20%;
+  z-index: 1;
+  position: relative;
+  animation: pointerAnimation 1s ease-out  forwards;
+}
 .landingPage .pointer{
 display:none
   
@@ -582,3 +800,139 @@ display:none
 .bakes .pointer{
 display: none;
 }
+
+@media (max-width:470px)
+{
+
+  .landingPage .landingPageDecorate {
+    width: 57%;
+    height: 45vh;
+    background: #ffffff;
+    left: 17%;
+    position: absolute;
+    border-radius: 167px;
+    top: 30vh;
+    /* display: none; */
+}
+
+.landingPage .full-robo-component {
+  position: relative;
+  width: 91%;
+  height: 36vh;
+  background-color: #ffeeee;
+  border-radius: 205px;
+  left: 4%;
+  top: 11%;
+}
+
+.landingPage .container {
+  position: relative;
+  top: 52%;
+  left: -3%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingPage .typingMessage {
+  width: 50%;
+  position: absolute;
+  /* top: 37%; */
+  z-index: 2;
+  color: black;
+  /* overflow: hidden; */
+  /* white-space: normal; */
+  /* margin: 0; */
+  /* padding: 10px; */
+  /* display: inline-block; */
+  font-family: 'Protest Revolution', sans-serif;
+  /* font-family: 'Arial', sans-serif; */
+  opacity: 0;
+  font-size: 40px;
+  animation: typing-start 0.01s 2s forwards;
+  text-align: center;
+}
+
+.landingPage .pointerAnimate {
+  opacity: 1;
+  top: 62vh;
+  left: 88%;
+  width: 20%;
+  height: 20%;
+  z-index: 1;
+  position: relative;
+  animation: pointerAnimation 1s ease-out  forwards;
+}
+.landingPage .myAssistant {
+  top: 37%;
+  left: 67%;
+  animation: landingPageSlideAndShake 2s ease-in-out;
+  width: 40%;
+  height: 24vh;
+  position: absolute;
+}
+  .landingPage .typingMessage{
+    font-size: 13px;
+  }
+
+  @keyframes pointerAnimation {
+    0% {
+      transform: translateX(65%) translateY(10%) scale(1);
+      opacity: 1;
+    }
+  
+    60% {
+      transform: translateX(-32%) translateY(-43vh) scale(.5)  ;
+      opacity: 1;
+    }
+  
+    80%{
+      transform: translateX(-32%) translateY(-43vh) scale(.1);
+      opacity: 0;
+    }
+  
+    90%{
+      transform: translateX(-32%) translateY(-43vh) scale(.5);
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+      transform: translateX(65%) translateY(10%) scale(.5);
+       
+    }
+  }
+
+  .landingPage .arrow-down {
+
+    bottom: 5vh;
+    right: 13%;
+}
+
+.landingPage .arrow-container {
+
+  position: relative;
+  top: 94vh;
+  left: -1%;
+}
+}
+
+.bakes .arrow-container {
+  width: 20%;
+  height: 3vh;
+  margin: 0 auto;
+  position: absolute;
+  left: -100%;
+    right: 0;
+  top: -16vh;
+}
+
+/* .bakes .arrow-container {
+  width: 23%;
+  height: 3vh;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -16vh;
+} */

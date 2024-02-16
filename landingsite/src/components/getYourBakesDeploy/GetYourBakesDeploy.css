@@ -20,6 +20,26 @@
   display: flex;
   background-color: #cebeaa;
 }
+.cloudInfo h1 {
+  margin: 0;
+  /* align-items: center; */
+  /* position: relative; */
+  justify-content: center;
+  display: flex;
+  background-color: #cebeaa;
+  font-size: 124%;
+}
+.cloudInfo {
+  width: 30%;
+  height: 42vh;
+  background-color: red;
+  position: relative;
+  /* left: 33%; */
+  top: -70px;
+  border-radius: 38px;
+  box-shadow: 0 0 20px rgb(169 135 135 / 50%);
+  transition: transform 0.3s ease;
+}
 .cloudInfo {
   width: 35%;
   height: 285px;
@@ -39,6 +59,14 @@
     top: 50%;
     height: 356px;
 }
+.resourceSection {
+  width: 101%;
+  /* background-color: red; */
+  /* position: absolute; */
+  left: 14%;
+  top: 50%;
+  height: 32vh;
+}
 
 .stackInfo{
 
@@ -47,6 +75,15 @@
     align-items: center;
     display: flex;
     flex-flow:column;
+}
+
+.stackInfo {
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 60%;
+  flex-flow: column;
 }
 
 .actions{
@@ -60,7 +97,7 @@
 
 .output{
     background-color: rgb(115, 236, 185);
-
+    text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -94,6 +131,16 @@
   /* font-weight: bold;
   font-size: 3em;
   text-align: center; */
+}
+
+.flex-item {
+  padding: 5px;
+  width: 21%;
+  height: inherit;
+  margin: 10px 10px 10px 10px;
+  line-height: 34px;
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 
 
@@ -170,13 +217,159 @@
     margin-top: 10px;
 }
 
+.bakesContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff7f7;
+  margin-top: 10px;
+}
+
   .bakesWrap{
     position: relative;
     top: 100px;
   }
-
-  .loadingGif {
+  .bakesWrap {
+    position: relative;
+    top: -12vh;
+}
+.loadingGif {
     width: 42px;
     position: relative;
     /* top: 496px; */
+}
+
+.stackInfo.flex-item table {
+  line-height: 11px;
+}
+@media (max-width:470px){
+  .cloudInfo {
+    width: 37%;
+    height: 24vh;
+    background-color: red;
+    position: relative;
+    /* left: 33%; */
+    top: -70px;
+    border-radius: 38px;
+    box-shadow: 0 0 20px rgb(169 135 135 / 50%);
+    transition: transform 0.3s ease;
+}
+
+.cloudInfo h1 {
+  margin: 0;
+  /* align-items: center; */
+  /* position: relative; */
+  justify-content: center;
+  display: flex;
+  background-color: #cebeaa;
+  font-size: 82%;
+}
+.resourceSection {
+  width: 213%;
+  /* background-color: red; */
+  /* position: absolute; */
+  left: 14%;
+  top: 50%;
+  height: 21vh;
+}
+
+.flex-item {
+  padding: 5px;
+  width: 36%;
+  height: inherit;
+  margin: 10px 10px 10px 10px;
+  line-height: 34px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.stackInfo {
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 40%;
+  flex-flow: column;
+}
+.output {
+  background-color: rgb(115, 236, 185);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 54%;
+}
+.footer {
+  position: relative;
+  width: 100%;
+  top: 88vh;
+  height: 56px;
+  background-color: beige;
+  background-image: linear-gradient(90deg, #fdf9f2 0%, #c5ad82 35%, #ffd2d2 100%);
+}
+.bakes .container {
+  position: relative;
+  top: -5vh;
+  right: 47%;
+  /* z-index: 1; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bakes .typingMessage {
+  width: 91%;
+  left: -2%;
+  position: absolute;
+  z-index: 2;
+  color: black;
+  overflow: hidden;
+  white-space: normal;
+  margin: 0;
+  padding: 10px;
+  display: inline-block;
+  font-size: 38%;
+  font-family: 'Arial', sans-serif;
+  opacity: 0;
+  animation: typing-start 0.01s 2s forwards;
+}
+.bakes .myAssistantbubble {
+  width: 132%;
+  height: 13vh;
+  position: relative;
+  opacity: 0;
+  /* transform: translate(-50%, -50%); */
+  animation: bakesExpandAndPopBakes 1s ease-out 1.2s forwards;
+  z-index: 0;
+  top:.8vh;
+}
+.bakes .myAssistantWrapper {
+  position: absolute;
+  top: 4vh;
+  right: 69%;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: 100%;
+  
+}
+.bakes .myAssistant {
+  animation: bakesSlideAndShakeBakes 2s ease-in-out forwards;
+  width: 90%;
+  height: 23vh;
+  display: block;
+  /* position: absolute; */
+}
+.bakesWrap {
+  position: relative;
+  top: 0vh;
+}
+.stackInfo.flex-item table {
+  line-height: 11px;
+  font-size: 5px;
+}
+
+.stackInfo.flex-item  {
+  line-height: 13px;
+}
+}
+
+.stackInfo.flex-item table {
+  font-size: .8vw;
 }

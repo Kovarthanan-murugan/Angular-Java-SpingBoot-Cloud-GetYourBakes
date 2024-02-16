@@ -5,6 +5,14 @@
     left: 1792px;
     top: 10px;
 }
+
+.githubIcon {
+    width: 2%;
+    height: 4vh;
+    position: relative;
+    left: 97%;
+    top: 1vh;
+}
   
 .linkedinIcon {
     width: 47px;
@@ -14,10 +22,27 @@
     top: 11px;
 }
 
+.linkedinIcon {
+    width: 2%;
+    height: 4vh;
+    position: relative;
+    left: 92%;
+    top: 1vh;
+}
+
 .footer {
     position: relative;
     width: 1913px;
     top: 702px;
+    height: 56px;
+    background-color: beige;
+    background-image: linear-gradient(90deg, #fdf9f2 0%, #c5ad82 35%, #ffd2d2 100%);
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    top: 88vh;
     height: 56px;
     background-color: beige;
     background-image: linear-gradient(90deg, #fdf9f2 0%, #c5ad82 35%, #ffd2d2 100%);
@@ -33,3 +58,14 @@
     top: 400px;
 }
 
+.updatingSoon {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    font-family: 'Protest Revolution', sans-serif;
+    font-weight: 100;
+    position: relative;
+    font-size: 5vw;
+    top: 46vh;
+}

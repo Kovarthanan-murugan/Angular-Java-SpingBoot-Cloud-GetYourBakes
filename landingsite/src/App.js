@@ -14,7 +14,7 @@ const HomePage = ()=>{
         <BrowserRouter>
         <div className="closure">
         <RobotAssistant classForComponent={"landingPage"}/>
-        <LandingPage/>
+         <LandingPage/>
         <GetYourBakes/>
         <Otherprojects/>
         </div>
