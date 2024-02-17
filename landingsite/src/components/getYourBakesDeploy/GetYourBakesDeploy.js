@@ -14,10 +14,11 @@ export default function GetYourBakes(){
     const a = ()=>{
         console.log("clicked kova")
     }
-    const {publicIp,fetchIpData,deployResource,deleteResources,status,allProvisionResources,getStatus,currentOperation}= useDeployResources();
+    const {publicIp,fetchIpData,deployResource,deleteResources,status,allProvisionResources,getStatus,currentOperation,updateUserCount}= useDeployResources();
 
     useEffect(()=>{
         getStatus();
+        updateUserCount('?insideSite');
         
      },[])
  
@@ -73,7 +74,7 @@ export default function GetYourBakes(){
                         ? 
                         <button className ='missile-button missile-button-red' onClick={deleteResources}>Delete</button>
                         :(currentOperation == 'deploy' || status =='DeployInProgress'?'Provising is in process'
-                        :((status == 'DeleteInProgress' || currentOperation == 'delete') && status != 'DeleteComplete' || status =='DeleteInProgress' ? 'Deleting resources' :<button className = 'missile-button missile-button-green'onClick={deployResource}>Deploy</button>)
+                        :((status == 'DeleteInProgress' || currentOperation == 'delete') && status != 'DeleteComplete' || status =='DeleteInProgress' ? 'Deleting resources' :<button className = 'missile-button missile-button-green'onClick={()=>{deployResource();updateUserCount('?deployCliked');}}>Deploy</button>)
                         )
                         }
                         {
@@ -96,7 +97,7 @@ export default function GetYourBakes(){
                         {
                         status != '' && ((status == 'DeployComplete') || (status == 'DeleteInProgress'))
                         ? 
-                        <a href={`http://${publicIp}:4000`} target='_blank'> Deployed application</a>
+                        <a href={`http://${publicIp}:4000`} onClick={()=>{updateUserCount('?visitedDeploy');}}target='_blank'> Deployed application</a>
                         :'No Provisioned resource available'
 
                         }

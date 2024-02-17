@@ -25,7 +25,7 @@ export const useDeployResources = ()=>{
     });
   }
 
-const getStatus= async (query =(currentOperation == 'delete' ? '?fordelete=true':''),statusCheck )=>{
+const getStatus= async (query =(currentOperation == 'delete' || status == 'DeleteInProgress' ? '?fordelete=true':''),statusCheck )=>{
   // console.log("triggerfromschedule",schedule)
   let statusResponse = ''
   await axios.get(basePath+'/getStackStatus'+query).then( (response) => {statusResponse = response.data.response.stackCurrentStatus;console.log('status',response.data.response.stackCurrentStatus);
@@ -82,7 +82,13 @@ const deleteResources = ()=>{
   setCurrentOperation('delete')
   };
 
+  const updateUserCount = (action='')=>{
 
-  return {publicIp,fetchIpData,deployResource,deleteResources,status,allProvisionResources,getStatus,currentOperation}
+    axios.get(basePath+'/updateUser'+action).then(()=>{}).catch((error)=>{console.log('errror update user in')})
+
+  }
+
+
+  return {publicIp,fetchIpData,deployResource,deleteResources,status,allProvisionResources,getStatus,currentOperation,updateUserCount}
 };
 
