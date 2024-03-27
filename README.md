@@ -5,7 +5,7 @@ A web-based bakery platform empowers customers to order and personalize a wide r
 Docker was employed for containerization, ensuring a smooth transition of the platform and guaranteeing its adaptability and scalability."
 
 **Live Running Application:**
-https://getyourbakesfrontend-irzzq65cdq-uc.a.run.app/
+[https://getyourbakesfrontend-irzzq65cdq-uc.a.run.app/](https://porfoliolandingsite-irzzq65cdq-nn.a.run.app/)
 
 
 **Architecture:**
