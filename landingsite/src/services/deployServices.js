@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useGetDeployedPublicIpHook} from '../hooks/autoDeployHooks'
 import{useState} from 'react';
-const basePath = 'https://nxzr5jmjrk.execute-api.us-east-1.amazonaws.com';
+const basePath = 'https://u4q02a6x01.execute-api.us-east-1.amazonaws.com';
 
 export const useDeployResources = ()=>{ 
   const [publicIp,setPublicIp] =useState('')

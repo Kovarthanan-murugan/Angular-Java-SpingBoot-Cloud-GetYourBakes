@@ -1,5 +1,4 @@
 import React from 'react';
-import video1 from '../../assets/bg-universe.mp4';
 import '../background/background.css'
 
 const Background = () => {
@@ -14,7 +13,7 @@ const Background = () => {
           preload="auto"
           id="bg"
         >
-          <source src={video1} type="video/mp4" />
+          <source src={''} type="video/mp4" />
         </video>
       </>
     );

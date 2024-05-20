@@ -31,7 +31,14 @@ export default function GetYourBakes(){
 
             <div className="cloudInfo">
                 <h1>AWS Architecture</h1>
-                <img className='architectureImg' src={ufo}></img>
+                {/* <img className='architectureImg' src={ufo}></img> */}
+                <iframe className='video' src='https://www.youtube.com/embed/XXWc2wPCGU4'
+                frameborder='0'
+                allow='autoplay; encrypted-media'
+                allowfullscreen
+                title='video'
+                    />
+
 
             </div>
 

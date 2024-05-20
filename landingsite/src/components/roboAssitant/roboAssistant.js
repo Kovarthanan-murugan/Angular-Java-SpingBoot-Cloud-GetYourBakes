@@ -7,15 +7,15 @@ import GetYourBakes from '../getYourBakesDeploy/GetYourBakesDeploy'
 import Background from '../background/background';
 
  export default function Assistant(props){
-    const listDataLandingPage = ["Hello Excited to see you today!!","Kovarthanan created me to his assistant",
-    "First I want to share some information I learned about him when he created me",
-    "He is passionate about electronics and software development",
+    const listDataLandingPage = ["Hello Excited to see you today!!","I am Danny here to help you navigate the site and share some information about 'Kova'",
+  
+    "He is a passionate software developer with extensive interest in automation",
     "He helped business to build their digital products for 2 years",
     "Then he did his Master's in Applied computer science at Dalhousie University",
-    "Now he works with Fidelity Canada in capacity of Student Digital Applications developer",
-    "His skill set includes Java, Amazon Web Services, Javascript realted technologies like React, Angular and Node.",
+    "Now he works with Fidelity Canada in the capacity of Student Digital Applications developer",
+    "His skill set includes Java, Amazon Web Services, Docker, Javascript realted technologies like React, Angular and Node.",
     "First He Wants me to show you one of the project he is working"];
-    const listDataBakes = ["Here you can find the AWS auto deploy setup for one of his project","summa",
+    const listDataBakes = ["Here you can find the AWS auto deploy setup for one of his project",
     "First I want to share some information I learned about him when he created me",
     "He is passionate about electronics and software development",
     "He helped business to build their digital products for 2 years",
@@ -24,7 +24,7 @@ import Background from '../background/background';
     "His skill set includes Java, Amazon Web Services, Javascript realted technologies like React, Angular and Node.",
     "First He Wants me to show you one of the project he is working"];
    
-    const bakesProvisionPage =['Here you can find the current resource provisioning status','Here you can find  Deploy and Delete actions','Here you can find the link for the provisioned application after provision done','Now all the provisoned resource will be deleted from the AWS', 'New resources will be provisioned for getyourbakes application']
+    const bakesProvisionPage =['Here you can find the current resource provisioning status','Here you can find  Deploy and Delete actions','Here you can find the link for the provisioned application after provision is done','Now all the provisoned resource will be deleted from the AWS', 'New resources will be provisioned for getyourbakes application']
     const [message,setMessage] = useState('')
     const [inCurrentSequence,setInCurrentSequence] = useState(0)
     const [currentPageData,setCurrentPageData] = useState([])

@@ -52,13 +52,16 @@ export class DetailsComponent {
       });
   }
 
-  addToCart() {
+  async addToCart() {
     const bakesDataNumber = Number(this.route.snapshot.params['id']);
     console.log('product added', this.bakesData);
     console.log(
       'postmethod',
-      this.cartServicesService.postSomeData(this.bakesData)
+      await this.cartServicesService.postSomeData(this.bakesData)
+
+      
     );
+    console.log('beforecart')
     this.router.navigate(['/cart']);
       }
 }

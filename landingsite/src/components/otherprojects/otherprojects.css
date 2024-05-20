@@ -10,7 +10,7 @@
     width: 2%;
     height: 4vh;
     position: relative;
-    left: 97%;
+    left: 95%;
     top: 1vh;
 }
   
@@ -26,10 +26,19 @@
     width: 2%;
     height: 4vh;
     position: relative;
-    left: 92%;
+    left: 89%;
     top: 1vh;
 }
 
+
+.kovaIcon {
+    width: 2%;
+    height: 4vh;
+    position: relative;
+    left: 89%;
+    top: 1vh;
+    border-radius: 26px;
+}
 .footer {
     position: relative;
     width: 1913px;

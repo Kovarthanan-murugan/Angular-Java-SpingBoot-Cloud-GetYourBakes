@@ -76,7 +76,8 @@ export class CartservicesService {
 
   async postSomeData(cartData: BakesData | undefined) {
     let addCartJson = {};
-    this.getAllCartDataServiceForCart().then((jsonData: any) => {
+    
+    await this.getAllCartDataServiceForCart().then((jsonData: any) => {
       if (cartData != undefined) {
         addCartJson = {
           category: cartData.category,
@@ -109,11 +110,15 @@ export class CartservicesService {
         .subscribe({
           next: (data) => {
             console.log('post successful');
+            
           },
           error: (error) => {
             console.error('There was an error!', error);
           },
         });
+
+        return "post success"
     });
+    
   }
 }

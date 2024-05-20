@@ -34,7 +34,7 @@ const routeConfig: Routes = [
       path:'confirmcode',
       component:ConfirmCode,
       title:'confirmcode',
-      canActivate: [AuthGuard]
+      // canActivate: [AuthGuard]
     },
     {
       path:'cart',
