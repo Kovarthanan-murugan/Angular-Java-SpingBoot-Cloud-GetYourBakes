@@ -5,12 +5,12 @@ A web-based bakery platform empowers customers to order and personalize a wide r
 Docker was employed for containerization, ensuring a smooth transition of the platform and guaranteeing its adaptability and scalability."
 
 **Live Running Application:**
-https://getyourbakesfrontend-irzzq65cdq-uc.a.run.app/
+[https://getyourbakesfrontend-irzzq65cdq-uc.a.run.app/](https://porfoliolandingsite-irzzq65cdq-nn.a.run.app/)
 
 
 **Architecture:**
+![getyourbakesfidelity](https://github.com/Kovarthanan-murugan/Angular-Java-SpingBoot-Cloud-GetYourBakes/assets/90558927/26b885f1-9b52-46a9-88a3-2181f4bd267d)
 
-![githubpre](https://github.com/Kovarthanan-murugan/Angular-Java-SpingBoot-Cloud-GetYourBakes/assets/90558927/ca232a8f-9d8f-418c-bba9-112705c629a1)
 
 **Application UI:**
 
